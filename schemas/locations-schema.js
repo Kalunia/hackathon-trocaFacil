@@ -3,8 +3,10 @@ const Schema   = mongoose.Schema;
 
 
 const LocationsSchema = new Schema({
-  title: { type: String, required: true },
-  body:  { type: String }
+  lat: { type: String, required: true },
+  lng:  { type: String, required: true },
+  created_at: { type: Date, default: Date.now },
+  updated_at: { type: Date }
 });
 
 

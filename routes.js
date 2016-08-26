@@ -28,4 +28,14 @@ router.route('/locations/:id')
   .delete((...args) => controllers.locations.remove(...args));
 
 
+router.route('/jobs')
+  .get((...args) => controllers.jobs.find(...args))
+  .post((...args) => controllers.jobs.create(...args));
+
+router.route('/jobs/:id')
+  .put((...args) => controllers.jobs.update(...args))
+  .get((...args) => controllers.jobs.findById(...args))
+  .delete((...args) => controllers.jobs.remove(...args));
+
+
 module.exports = router;
