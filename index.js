@@ -16,6 +16,13 @@ require('./libraries/promisify-all')(['mongoose']);
 
 mongoose.connect(config.mongo.url);
 
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+
+db.once('open', function() {
+  // Wait for the database connection to establish, then start the app.                         
+});
+
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
